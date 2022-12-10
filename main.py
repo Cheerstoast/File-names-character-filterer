@@ -24,9 +24,9 @@ for directory in directories:
         toappend = toappend + ch
     output.append(toappend)
 # Rename all files and folders recursively
-# try:
-for i in input:
-  os.renames(i, output[input.index(i)])
-# except:
-#   input("\e[0;32mError: one or more files or folders doesn't contain any non-chinese characters. Abort.")
+try:
+  for i in input:
+    os.renames(i, output[input.index(i)])
+except:
+  input("\e[0;32mError: one or more files or folders doesn't contain any non-chinese characters. Abort.")
 print('\033[H\033[J\001\033[0;92m\002Success!\n\001\033[0m\002')
